@@ -1,0 +1,28 @@
+{%extends 'base2.html'%}
+{%load static%}
+{%block newcss%}
+<link rel="stylesheet" href="{%static 'css/show.css'%}">
+{%endblock%}
+{%block main%}
+       <div class="conatiner">
+{%if user.is_authenticated%}
+       {%for i in page_obj %}
+       <div class="card">
+       <img src="{{i.Images.url}}" alt="" id="img"><br><br>
+       <p>Emp_No : {{i.Employee_No}}</p>
+       <p>Name : {{i.Employee_Name}}</p>
+       <p>Department : {{i.department.Department_Name}}</p>
+       </div>
+       {%endfor%}<br><br>
+       </div>
+       <div class="pagination">
+        {% if page_obj.has_previous %}
+       <a class="btn prev" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+       {%endif%}
+       {% if page_obj.has_next %}
+       <a href="?page={{ page_obj.next_page_number }}" class="btn next">Next</a>
+       {%endif%}
+       </div>
+{%endif%}
+<p style="color: red; font-size:larger;">'sorry!! Only admin can have access to insert,delete,update</p>
+{% endblock %}

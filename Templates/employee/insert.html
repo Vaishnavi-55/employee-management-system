@@ -1,0 +1,28 @@
+{%extends 'base2.html'%}
+{%block main%}
+<label for="">EMPLOYE_NO:
+<input type="number" name="empno">
+</label><br><br>
+<label for="">EMPLOYE_NAME:
+<input type="text" name="empname">
+</label><br><br>
+<label for="">EMPLOYE_SALARY:
+<input type="number" name="esal">
+</label><br><br>
+<label for="">DEPARTMENT:
+<select name="dept" id="">
+    <option value="">--select department--</option>
+    {%for deptt in departments%}
+        <option value="{{ deptt.Department_Name }}">{{ deptt.Department_Name }}</option>
+    {%endfor%}
+</select><br><br>
+</label><br><br>
+<label for="">Image:
+<input type="file" name="image" multiple>
+</label><br><br>
+{%if user.is_authenticated%}
+<button>Insert</button>
+{%endif%}
+<p>{{ress}}</p>
+<p>{{res}}</p>
+{%endblock%}

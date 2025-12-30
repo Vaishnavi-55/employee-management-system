@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block newcss%}
+<link rel="stylesheet" href="{%static 'css/EmpApp.css'%}">
+{%endblock%}
+{%block main%}
+<div class="container">
+<label for="">Email:
+<input type="Email" placeholder="email" name="mail" required>
+</label><br><br>
+<label for="">Username:
+<input type="text" placeholder="username" name="usname" required>
+</label><br><br>
+<label for="">Password:
+<input type="password" placeholder="password" name="paswrd1" required>
+</label><br><br>
+<label for="">Confirm_Password:
+<input type="password" placeholder="password" name="paswrd2" required>
+</label><br><br>
+<button name="signup">signup</button><br><br>
+<p>Back to Login? <a href="{%url 'super:login.url'%}">Login</a></p>
+{% if error%}
+<p style="color: red;">{{error}}</p>
+{%endif%}
+</div>
+{%endblock%}

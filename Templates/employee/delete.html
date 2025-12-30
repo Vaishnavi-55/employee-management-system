@@ -1,0 +1,10 @@
+{%extends 'base2.html'%}
+{%block main%}
+<p>Are you sure you want to <strong>DELETE {{obj.EMPLOYE_NAME}}</strong></p>
+{%if user.is_authenticated%}
+<input type="submit" value="Delete">
+{%endif%}
+{%if error%}
+<p>{{error}}</p>
+{%endif%}
+{%endblock%}

@@ -1,0 +1,24 @@
+{%extends 'base2.html'%}
+{%block main%}
+<p> WARNING : "The Employee_number can't be updated."</p><br><br>
+<label for="">EMPLOYE_NAME:
+<input type="text" name="empname" value="{{employee.Employee_Name}}">
+</label><br><br>
+<label for="">EMPLOYE_SALARY:
+<input type="number" name="esal" value="{{employee.Employee_Salary}}">
+</label><br><br>
+<label for="">DEPARTMENT:
+<select name="dept" id="">
+    {%for deptt in department%}
+        <option value="{{ deptt.Department_No}}"
+                {% if deptt.Department_No == employee.department.Department_No %} selected {% endif %}
+                >{{ deptt.Department_Name }}</option>
+    {%endfor%}
+</select><br><br>
+</label><br><br>
+{%if user.is_authenticated%}
+<button class="btn">Update</button>
+{%endif%}
+<p>{{ress}}</p>
+<p>{{res}}</p>
+{%endblock%}

@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block newcss%}
+<link rel="stylesheet" href="{%static 'css/EmpApp.css'%}">
+{%endblock%}
+{%block main%}
+<div class="container">
+<label for="">Username:
+<input type="text" placeholder="username" name="usname" required>
+</label><br><br>
+<label for="">Password:
+<input type="password" placeholder="password" name="paswrd" required>
+</label><br><br>
+<button name="login">Login</button><br><br>
+if don't have an account? <a href="{% url 'super:signup.url'%}">SignUp</a><br><br><br>
+{%if error%}
+<p>{{error}}</p>
+{%endif%}
+</div>
+{%endblock%}
+

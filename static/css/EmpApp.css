@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    border: 2px solid black;
+    padding: 10%;
+    border-radius: 5px;
+    background-color: rgb(163, 245, 163);
+}
+button{
+    padding: 10px;
+    width: 200px;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    background-color: skyblue;
+    border-radius: 5px;
+    border: none;
+}
+input{
+    padding: 10px;
+}
