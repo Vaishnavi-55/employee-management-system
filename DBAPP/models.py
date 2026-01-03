@@ -8,5 +8,7 @@ class Employee(models.Model):
       Employee_Name = models.CharField(max_length=24)
       Employee_Salary = models.IntegerField(null=False)
       department = models.ForeignKey(Department,on_delete=models.CASCADE,null=True,blank=True)
-      Images = models.ImageField(null=True,upload_to='image/')
+      Images = models.ImageField(null=True,upload_to='image/',blank=True)
+      def __str__(self):
+          return self.Employee_Name
 

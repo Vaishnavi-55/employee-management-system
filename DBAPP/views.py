@@ -16,6 +16,7 @@ def insert(request):
     if request.method == 'POST':
        if 'show' in request.POST:
           return redirect('showdetails.url')
+       print(request.POST,request.FILES)
        empno = int(request.POST['empno'])
        empname = request.POST['empname']
        esal = int(request.POST['esal'])

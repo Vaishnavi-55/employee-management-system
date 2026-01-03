@@ -8,7 +8,11 @@
 {%if user.is_authenticated%}
        {%for i in page_obj %}
        <div class="card">
+       {%if i.Images%}
        <img src="{{i.Images.url}}" alt="" id="img"><br><br>
+       {%else%}
+       <p id="img" style="color: red;">No Profile Pic</p>
+       {%endif%}
        <p>Emp_No : {{i.Employee_No}}</p>
        <p>Name : {{i.Employee_Name}}</p>
        <p>Department : {{i.department.Department_Name}}</p>
